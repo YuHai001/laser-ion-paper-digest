@@ -1,0 +1,75 @@
+{
+  "report": {
+    "title": "激光离子加速每日论文进展",
+    "language": "zh-CN",
+    "max_papers": 12,
+    "timezone": "Asia/Shanghai"
+  },
+  "arxiv": {
+    "categories": [
+      "physics.plasm-ph",
+      "physics.acc-ph",
+      "physics.optics",
+      "nucl-ex"
+    ],
+    "lookback_days": 3,
+    "max_results": 80
+  },
+  "queries": [
+    "all:\"laser ion acceleration\"",
+    "all:\"laser-driven ion acceleration\"",
+    "all:\"laser proton acceleration\"",
+    "all:\"laser-plasma ion acceleration\"",
+    "all:\"target normal sheath acceleration\"",
+    "all:TNSA",
+    "all:\"radiation pressure acceleration\"",
+    "all:\"laser-driven proton\"",
+    "all:\"hole boring\" AND all:ion AND all:laser",
+    "all:\"shock acceleration\" AND all:laser AND all:ion",
+    "all:\"relativistic laser\" AND all:\"ion acceleration\""
+  ],
+  "ranking": {
+    "strong_terms": [
+      "laser ion acceleration",
+      "laser-driven ion acceleration",
+      "laser proton acceleration",
+      "laser-driven proton",
+      "laser-plasma ion acceleration",
+      "target normal sheath acceleration",
+      "tnsa",
+      "radiation pressure acceleration",
+      "rpa",
+      "hole boring",
+      "collisionless shock acceleration",
+      "breakout afterburner",
+      "boa"
+    ],
+    "support_terms": [
+      "proton beam",
+      "ion beam",
+      "ion energy",
+      "maximum energy",
+      "cutoff energy",
+      "laser intensity",
+      "ultraintense laser",
+      "pic simulation",
+      "particle-in-cell",
+      "thin foil",
+      "target",
+      "plasma mirror",
+      "high repetition rate",
+      "beam quality",
+      "divergence",
+      "energy spread"
+    ],
+    "exclude_terms": [
+      "laser cooling",
+      "ion trap",
+      "trapped ion quantum",
+      "mass spectrometry",
+      "ionization laser",
+      "laser ablation inductively coupled plasma"
+    ],
+    "minimum_score": 4
+  }
+}
