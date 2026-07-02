@@ -67,6 +67,10 @@ def infer_mechanism(text: str) -> str:
         return "collisionless shock acceleration"
     if "breakout afterburner" in lowered or " boa" in lowered:
         return "BOA"
+    if "magnetic vortex" in lowered or " mva" in lowered:
+        return "MVA"
+    if "relativistic transparency" in lowered or "break-out afterburner" in lowered:
+        return "relativistic transparency/BOA"
     return "未明确归类"
 
 
@@ -78,6 +82,10 @@ def infer_study_type(text: str) -> str:
         return "experiment"
     if "simulation" in lowered or "particle-in-cell" in lowered or " pic " in f" {lowered} ":
         return "simulation"
+    if "machine learning" in lowered or "bayesian optimization" in lowered or "bayesian optimisation" in lowered:
+        return "machine learning/automation"
+    if "closed-loop" in lowered or "automated optimization" in lowered or "automated optimisation" in lowered:
+        return "machine learning/automation"
     if "theory" in lowered or "model" in lowered:
         return "theory/model"
     return "未明确说明"
@@ -92,6 +100,8 @@ def infer_ion_species(text: str) -> str:
         species.append("carbon")
     if "helium" in lowered or "alpha particle" in lowered:
         species.append("helium")
+    if "deuteron" in lowered or "deuterium" in lowered:
+        species.append("deuteron")
     if "heavy ion" in lowered:
         species.append("heavy ion")
     if "ion" in lowered and not species:
