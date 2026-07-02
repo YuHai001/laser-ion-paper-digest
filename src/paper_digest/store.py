@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS papers (
     published TEXT NOT NULL,
     updated TEXT NOT NULL,
     url TEXT NOT NULL,
+    source TEXT NOT NULL DEFAULT 'arXiv',
     pdf_url TEXT,
     doi TEXT,
     primary_category TEXT,
@@ -39,10 +40,19 @@ class PaperStore:
         self.connection = sqlite3.connect(self.path)
         self.connection.row_factory = sqlite3.Row
         self.connection.execute(SCHEMA)
+        self._ensure_columns()
         self.connection.commit()
 
     def close(self) -> None:
         self.connection.close()
+
+    def _ensure_columns(self) -> None:
+        columns = {
+            row["name"]
+            for row in self.connection.execute("PRAGMA table_info(papers)").fetchall()
+        }
+        if "source" not in columns:
+            self.connection.execute("ALTER TABLE papers ADD COLUMN source TEXT NOT NULL DEFAULT 'arXiv'")
 
     def upsert_paper(self, paper: Paper) -> bool:
         now = datetime.now(UTC).isoformat(timespec="seconds")
@@ -53,11 +63,11 @@ class PaperStore:
         self.connection.execute(
             """
             INSERT INTO papers (
-                paper_id, title, authors_json, abstract, published, updated, url, pdf_url,
+                paper_id, title, authors_json, abstract, published, updated, url, source, pdf_url,
                 doi, primary_category, categories_json, comment, score, matched_terms_json,
                 first_seen, last_seen
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(paper_id) DO UPDATE SET
                 title = excluded.title,
                 authors_json = excluded.authors_json,
@@ -65,6 +75,7 @@ class PaperStore:
                 published = excluded.published,
                 updated = excluded.updated,
                 url = excluded.url,
+                source = excluded.source,
                 pdf_url = excluded.pdf_url,
                 doi = excluded.doi,
                 primary_category = excluded.primary_category,
@@ -82,6 +93,7 @@ class PaperStore:
                 paper.published.isoformat(),
                 paper.updated.isoformat(),
                 paper.url,
+                paper.source,
                 paper.pdf_url,
                 paper.doi,
                 paper.primary_category,

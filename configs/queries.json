@@ -19,6 +19,526 @@
     "lookback_days": 3,
     "max_results": 80
   },
+  "sources": {
+    "enabled": [
+      "arxiv",
+      "openalex",
+      "crossref",
+      "semantic_scholar",
+      "europe_pmc",
+      "journal_watchlist"
+    ],
+    "max_results": 80,
+    "request_pause_seconds": 0.5,
+    "external_queries": [
+      "\"laser ion acceleration\"",
+      "\"laser-driven ion acceleration\"",
+      "\"laser proton acceleration\"",
+      "\"laser-driven proton\"",
+      "\"laser-plasma ion acceleration\"",
+      "\"laser accelerated ion\"",
+      "\"laser-accelerated proton\"",
+      "\"laser-driven proton beam\"",
+      "\"target normal sheath acceleration\"",
+      "\"radiation pressure acceleration\" laser ion",
+      "\"near-critical density target\" laser ion",
+      "\"collisionless shock acceleration\" laser ion",
+      "\"magnetic vortex acceleration\" laser ion",
+      "\"laser-driven ion irradiation\"",
+      "\"laser-driven proton irradiation\"",
+      "\"laser-driven neutron source\"",
+      "\"laser-driven radiobiology\"",
+      "\"laser-driven proton\" \"radiation damage\"",
+      "\"laser-driven proton\" semiconductor irradiation",
+      "\"machine learning\" \"laser-driven proton\""
+    ],
+    "openalex": {
+      "mailto": ""
+    },
+    "semantic_scholar": {},
+    "journal_watchlist": {
+      "max_results_per_journal": 5,
+      "max_results": 240,
+      "journals": [
+        {
+          "name": "Science",
+          "publisher": "AAAS",
+          "group": "general",
+          "issn": ["1095-9203", "0036-8075"],
+          "tags": ["high-impact", "multidisciplinary"]
+        },
+        {
+          "name": "Science Advances",
+          "publisher": "AAAS",
+          "group": "general",
+          "issn": ["2375-2548"],
+          "tags": ["high-impact", "open access", "multidisciplinary"]
+        },
+        {
+          "name": "Proceedings of the National Academy of Sciences",
+          "publisher": "National Academy of Sciences",
+          "group": "general",
+          "issn": ["1091-6490", "0027-8424"],
+          "tags": ["high-impact", "multidisciplinary"]
+        },
+        {
+          "name": "Nature",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["1476-4687", "0028-0836"],
+          "tags": ["high-impact", "multidisciplinary"]
+        },
+        {
+          "name": "Nature Physics",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["1745-2481", "1745-2473"],
+          "tags": ["high-impact", "physics"]
+        },
+        {
+          "name": "Nature Photonics",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["1749-4893", "1749-4885"],
+          "tags": ["high-impact", "laser", "photonics"]
+        },
+        {
+          "name": "Nature Communications",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2041-1723"],
+          "tags": ["high-impact", "open access", "multidisciplinary"]
+        },
+        {
+          "name": "Communications Physics",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2399-3650"],
+          "tags": ["open access", "physics"]
+        },
+        {
+          "name": "Scientific Reports",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2045-2322"],
+          "tags": ["open access", "multidisciplinary"]
+        },
+        {
+          "name": "Nature Reviews Physics",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2522-5820"],
+          "tags": ["review", "physics"]
+        },
+        {
+          "name": "Nature Machine Intelligence",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2522-5839"],
+          "tags": ["machine learning", "automation"]
+        },
+        {
+          "name": "npj Quantum Materials",
+          "publisher": "Springer Nature",
+          "group": "nature",
+          "issn": ["2397-4648"],
+          "tags": ["materials", "open access"]
+        },
+        {
+          "name": "Nature Materials",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["1476-4660", "1476-1122"],
+          "tags": ["high-impact", "materials", "radiation damage"]
+        },
+        {
+          "name": "Nature Nanotechnology",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["1748-3395", "1748-3387"],
+          "tags": ["high-impact", "nanomaterials", "semiconductor", "device irradiation"]
+        },
+        {
+          "name": "Nature Electronics",
+          "publisher": "Springer Nature",
+          "group": "nature-devices",
+          "issn": ["2520-1131"],
+          "tags": ["high-impact", "electronics", "semiconductor", "device irradiation"]
+        },
+        {
+          "name": "Nature Reviews Materials",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["2058-8437"],
+          "tags": ["review", "materials", "radiation damage"]
+        },
+        {
+          "name": "Communications Materials",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["2662-4443"],
+          "tags": ["open access", "materials", "radiation damage"]
+        },
+        {
+          "name": "npj Materials Degradation",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["2397-2106"],
+          "tags": ["open access", "materials degradation", "radiation damage"]
+        },
+        {
+          "name": "npj 2D Materials and Applications",
+          "publisher": "Springer Nature",
+          "group": "nature-materials",
+          "issn": ["2397-7132"],
+          "tags": ["open access", "2d materials", "semiconductor", "device irradiation"]
+        },
+        {
+          "name": "Physical Review Letters",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["1079-7114", "0031-9007"],
+          "tags": ["high-impact", "physics"]
+        },
+        {
+          "name": "Reviews of Modern Physics",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["1539-0756", "0034-6861"],
+          "tags": ["review", "physics"]
+        },
+        {
+          "name": "Physical Review X",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2160-3308"],
+          "tags": ["high-impact", "open access", "physics"]
+        },
+        {
+          "name": "Physical Review Research",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2643-1564"],
+          "tags": ["open access", "physics"]
+        },
+        {
+          "name": "Physical Review E",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2470-0053", "2470-0045"],
+          "tags": ["plasma", "statistical physics", "nonlinear dynamics"]
+        },
+        {
+          "name": "Physical Review Accelerators and Beams",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2469-9888"],
+          "tags": ["accelerator", "beam physics", "open access"]
+        },
+        {
+          "name": "Physical Review Applied",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2331-7019"],
+          "tags": ["applied physics"]
+        },
+        {
+          "name": "Physical Review Fluids",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2469-990X"],
+          "tags": ["fluid dynamics", "plasma-adjacent"]
+        },
+        {
+          "name": "Physical Review A",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2469-9934", "2469-9926"],
+          "tags": ["atomic physics", "laser"]
+        },
+        {
+          "name": "Physical Review B",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2469-9969", "2469-9950"],
+          "tags": ["condensed matter", "materials"]
+        },
+        {
+          "name": "Physical Review C",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2469-9993", "2469-9985"],
+          "tags": ["nuclear physics"]
+        },
+        {
+          "name": "Physical Review D",
+          "publisher": "American Physical Society",
+          "group": "aps",
+          "issn": ["2470-0029", "2470-0010"],
+          "tags": ["high-energy physics"]
+        },
+        {
+          "name": "Physics of Plasmas",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1089-7674", "1070-664X"],
+          "tags": ["plasma", "laser-plasma", "high energy density"]
+        },
+        {
+          "name": "Physics of Fluids",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1089-7666", "1070-6631"],
+          "tags": ["fluid dynamics", "plasma-adjacent"]
+        },
+        {
+          "name": "Review of Scientific Instruments",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1089-7623", "0034-6748"],
+          "tags": ["diagnostics", "instrumentation"]
+        },
+        {
+          "name": "Applied Physics Letters",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1077-3118", "0003-6951"],
+          "tags": ["applied physics", "materials"]
+        },
+        {
+          "name": "Journal of Applied Physics",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1089-7550", "0021-8979"],
+          "tags": ["applied physics", "materials"]
+        },
+        {
+          "name": "AIP Advances",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["2158-3226"],
+          "tags": ["open access", "applied physics"]
+        },
+        {
+          "name": "Applied Physics Reviews",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["1931-9401"],
+          "tags": ["review", "applied physics"]
+        },
+        {
+          "name": "APL Photonics",
+          "publisher": "AIP Publishing",
+          "group": "aip",
+          "issn": ["2378-0967"],
+          "tags": ["laser", "photonics"]
+        },
+        {
+          "name": "Plasma Physics and Controlled Fusion",
+          "publisher": "IOP Publishing",
+          "group": "plasma-core",
+          "issn": ["1361-6587", "0741-3335"],
+          "tags": ["plasma", "fusion"]
+        },
+        {
+          "name": "Nuclear Fusion",
+          "publisher": "IOP Publishing",
+          "group": "plasma-core",
+          "issn": ["1741-4326", "0029-5515"],
+          "tags": ["plasma", "fusion"]
+        },
+        {
+          "name": "Plasma Sources Science and Technology",
+          "publisher": "IOP Publishing",
+          "group": "plasma-core",
+          "issn": ["1361-6595", "0963-0252"],
+          "tags": ["plasma source", "diagnostics"]
+        },
+        {
+          "name": "Journal of Plasma Physics",
+          "publisher": "Cambridge University Press",
+          "group": "plasma-core",
+          "issn": ["1469-7807", "0022-3778"],
+          "tags": ["plasma", "theory", "simulation"]
+        },
+        {
+          "name": "High Energy Density Physics",
+          "publisher": "Elsevier",
+          "group": "plasma-core",
+          "issn": ["1878-0563", "1574-1818"],
+          "tags": ["high energy density", "laser-plasma"]
+        },
+        {
+          "name": "Matter and Radiation at Extremes",
+          "publisher": "AIP Publishing",
+          "group": "plasma-core",
+          "issn": ["2468-2047", "2468-080X"],
+          "tags": ["high energy density", "laser-plasma", "extreme states"]
+        },
+        {
+          "name": "High Power Laser Science and Engineering",
+          "publisher": "Cambridge University Press",
+          "group": "laser-plasma",
+          "issn": ["2052-3289", "2095-4719"],
+          "tags": ["high power laser", "laser-plasma", "open access"]
+        },
+        {
+          "name": "Laser and Particle Beams",
+          "publisher": "Cambridge University Press",
+          "group": "laser-plasma",
+          "issn": ["1469-803X", "0263-0346"],
+          "tags": ["laser-plasma", "particle beams", "high energy density"]
+        },
+        {
+          "name": "Plasma Physics Reports",
+          "publisher": "Pleiades Publishing",
+          "group": "plasma-core",
+          "issn": ["1562-6938", "1063-780X"],
+          "tags": ["plasma"]
+        },
+        {
+          "name": "Contributions to Plasma Physics",
+          "publisher": "Wiley",
+          "group": "plasma-core",
+          "issn": ["1521-3986", "0863-1042"],
+          "tags": ["plasma"]
+        },
+        {
+          "name": "IEEE Transactions on Plasma Science",
+          "publisher": "IEEE",
+          "group": "plasma-core",
+          "issn": ["1939-9375", "0093-3813"],
+          "tags": ["plasma", "engineering"]
+        },
+        {
+          "name": "IEEE Transactions on Nuclear Science",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1558-1578", "0018-9499"],
+          "tags": ["radiation effects", "single event effects", "device irradiation", "electronics"]
+        },
+        {
+          "name": "IEEE Transactions on Device and Materials Reliability",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1558-2574", "1530-4388"],
+          "tags": ["device reliability", "materials reliability", "semiconductor", "radiation effects"]
+        },
+        {
+          "name": "IEEE Transactions on Electron Devices",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1557-9646", "0018-9383"],
+          "tags": ["electron devices", "semiconductor", "device irradiation"]
+        },
+        {
+          "name": "IEEE Electron Device Letters",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1558-0563", "0741-3106"],
+          "tags": ["electron devices", "semiconductor", "device irradiation"]
+        },
+        {
+          "name": "IEEE Journal of the Electron Devices Society",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["2168-6734"],
+          "tags": ["electron devices", "semiconductor", "open access", "device irradiation"]
+        },
+        {
+          "name": "IEEE Transactions on Semiconductor Manufacturing",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1558-2345", "0894-6507"],
+          "tags": ["semiconductor", "defects", "device reliability"]
+        },
+        {
+          "name": "IEEE Transactions on Radiation and Plasma Medical Sciences",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["2469-7311", "2469-7303"],
+          "tags": ["radiation effects", "plasma", "medical physics", "detectors"]
+        },
+        {
+          "name": "IEEE Transactions on Reliability",
+          "publisher": "IEEE",
+          "group": "radiation-devices",
+          "issn": ["1558-1721", "0018-9529"],
+          "tags": ["reliability", "device reliability", "electronics"]
+        },
+        {
+          "name": "New Journal of Physics",
+          "publisher": "IOP Publishing",
+          "group": "physics",
+          "issn": ["1367-2630"],
+          "tags": ["open access", "physics"]
+        },
+        {
+          "name": "Journal of Physics D: Applied Physics",
+          "publisher": "IOP Publishing",
+          "group": "physics",
+          "issn": ["1361-6463", "0022-3727"],
+          "tags": ["applied physics", "plasma"]
+        },
+        {
+          "name": "Nuclear Instruments and Methods in Physics Research Section A",
+          "publisher": "Elsevier",
+          "group": "instrumentation",
+          "issn": ["1872-9576", "0168-9002"],
+          "tags": ["accelerator", "beamline", "diagnostics", "instrumentation"]
+        },
+        {
+          "name": "Physics in Medicine & Biology",
+          "publisher": "IOP Publishing",
+          "group": "medical-physics",
+          "issn": ["1361-6560", "0031-9155"],
+          "tags": ["medical physics", "radiobiology", "therapy"]
+        },
+        {
+          "name": "Medical Physics",
+          "publisher": "Wiley",
+          "group": "medical-physics",
+          "issn": ["2473-4209", "0094-2405"],
+          "tags": ["medical physics", "radiobiology", "therapy"]
+        },
+        {
+          "name": "Optica",
+          "publisher": "Optica Publishing Group",
+          "group": "laser-optics",
+          "issn": ["2334-2536"],
+          "tags": ["laser", "optics", "photonics"]
+        },
+        {
+          "name": "Optics Express",
+          "publisher": "Optica Publishing Group",
+          "group": "laser-optics",
+          "issn": ["1094-4087"],
+          "tags": ["laser", "optics", "photonics"]
+        },
+        {
+          "name": "Optics Letters",
+          "publisher": "Optica Publishing Group",
+          "group": "laser-optics",
+          "issn": ["1539-4794", "0146-9592"],
+          "tags": ["laser", "optics", "photonics"]
+        },
+        {
+          "name": "Light: Science & Applications",
+          "publisher": "Springer Nature",
+          "group": "laser-optics",
+          "issn": ["2047-7538"],
+          "tags": ["laser", "optics", "photonics"]
+        },
+        {
+          "name": "Laser & Photonics Reviews",
+          "publisher": "Wiley",
+          "group": "laser-optics",
+          "issn": ["1863-8899", "1863-8880"],
+          "tags": ["laser", "photonics", "review"]
+        }
+      ]
+    }
+  },
   "queries": [
     "all:\"laser ion acceleration\"",
     "all:\"laser-driven ion acceleration\"",

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "laser-ion-paper-digest"
 version = "0.1.0"
-description = "Daily arXiv digest for laser-driven ion acceleration papers."
+description = "Daily multi-source digest for laser-driven ion acceleration papers."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

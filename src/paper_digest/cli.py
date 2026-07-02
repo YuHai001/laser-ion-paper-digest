@@ -5,11 +5,11 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-from .arxiv import fetch_recent_papers
 from .config import ensure_project_dirs, load_config
 from .models import Paper, PaperSummary
 from .ranking import rank_papers
 from .report import render_report, write_report
+from .sources import fetch_recent_papers
 from .store import PaperStore
 from .summarizer import make_summarizer
 
@@ -21,12 +21,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--reports-dir", default="reports", help="Directory for generated reports.")
     parser.add_argument("--no-openai", action="store_true", help="Disable OpenAI summarization even if a key is set.")
     parser.add_argument("--max-papers", type=int, default=None, help="Override report max_papers.")
-    parser.add_argument("--lookback-days", type=int, default=None, help="Override arXiv lookback_days.")
-    parser.add_argument("--pause-seconds", type=float, default=3.0, help="Delay between arXiv requests.")
+    parser.add_argument("--lookback-days", type=int, default=None, help="Override source lookback_days.")
+    parser.add_argument("--pause-seconds", type=float, default=None, help="Delay between source requests.")
     parser.add_argument(
         "--allow-fetch-failure",
         action="store_true",
-        help="Generate a warning report instead of failing when arXiv is temporarily unavailable.",
+        help="Generate a warning report instead of failing when paper sources are temporarily unavailable.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print report instead of writing it.")
     args = parser.parse_args(argv)
@@ -36,20 +36,24 @@ def main(argv: list[str] | None = None) -> int:
     report_config = config["report"]
     arxiv_config = config["arxiv"]
 
-    print("Fetching arXiv papers...", file=sys.stderr)
+    source_config = config.get("sources", {})
+    print("Fetching papers from configured sources...", file=sys.stderr)
     warnings = []
     try:
-        papers = fetch_recent_papers(
+        fetch_result = fetch_recent_papers(
             queries=config["queries"],
-            categories=arxiv_config["categories"],
+            arxiv_config=arxiv_config,
+            source_config=source_config,
             lookback_days=args.lookback_days or int(arxiv_config.get("lookback_days", 3)),
-            max_results=int(arxiv_config.get("max_results", 80)),
+            max_results=int(source_config.get("max_results", arxiv_config.get("max_results", 80))),
             pause_seconds=args.pause_seconds,
         )
+        papers = fetch_result.papers
+        warnings.extend(fetch_result.warnings)
     except Exception as exc:
         if not args.allow_fetch_failure:
             raise
-        warning = f"arXiv 暂时不可用，本次未能完成论文抓取：{exc}"
+        warning = f"论文数据源暂时不可用，本次未能完成论文抓取：{exc}"
         print(f"Warning: {warning}", file=sys.stderr)
         warnings.append(warning)
         papers = []

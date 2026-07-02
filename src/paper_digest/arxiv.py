@@ -124,6 +124,7 @@ def _parse_entry(entry: ET.Element) -> Paper | None:
         published=_parse_datetime(_text(entry, "published")),
         updated=_parse_datetime(_text(entry, "updated")),
         url=paper_id_url,
+        source="arXiv",
         pdf_url=pdf_url,
         doi=_clean_text(entry.findtext(f"{ARXIV_NS}doi") or "") or None,
         primary_category=primary_category,

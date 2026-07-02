@@ -13,6 +13,7 @@ class Paper:
     published: datetime
     updated: datetime
     url: str
+    source: str = "arXiv"
     pdf_url: str | None = None
     doi: str | None = None
     primary_category: str | None = None

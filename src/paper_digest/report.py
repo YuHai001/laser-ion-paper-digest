@@ -21,7 +21,7 @@ def render_report(
         "",
         f"- 生成时间：{local_date.strftime('%Y-%m-%d %H:%M %Z')}",
         f"- 入选论文数：{len(papers)}",
-        "- 说明：本报告基于 arXiv 元数据和摘要自动生成；未在摘要中出现的参数不会被推断。",
+        "- 说明：本报告基于论文数据源的元数据和摘要自动生成；未在摘要中出现的参数不会被推断。",
         "",
     ]
 
@@ -90,6 +90,7 @@ def _render_paper(index: int, paper: Paper, summary: PaperSummary) -> list[str]:
         f"### {index}. {paper.title}",
         "",
         f"- 链接：[{paper.paper_id}]({paper.url})",
+        f"- 来源：{paper.source}",
         f"- 作者：{authors or '未提供'}",
         f"- 分类：{paper.primary_category or '未提供'}",
         f"- 发布/更新：{paper.published.date()} / {paper.updated.date()}",
